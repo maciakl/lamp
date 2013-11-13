@@ -25,10 +25,17 @@ You should now have full blown lamp stack ready to go.
 If you are planning to use this for a project you probably want to clean up your working dir and
 get rid of git stuff:
 
-    rm -rf .git Readme* setup.sh
+    rm -rf .git Readme*
     
 Now you should have a clean vagrant VM. Tip: keep `.gitignore` file. If you decide to create a new
-git repo here, it will automatically exclude the `.vagrant` folder.
+git repo here, it will automatically exclude the `.vagrant` folder. 
+
+Note: if you delete `setup.sh` make sure you delete the following line from `Vagrantfile` as well:
+
+    config.vm.provision "shell", path: "./setup.sh"
+    
+If you don't then vagrant will look for it next time you do `vagrant up`, realize it is missing and
+fail to boot. If the line is not there, it will be all good.
 
 Customizing
 ---
@@ -46,8 +53,14 @@ Here are some things you might need to know:
 - PHP PDO module is installed via the `php-mysql` package
 - Apache `mod_rewrite` is enabled by default
 - [Composer][co] is installed in `/usr/bin/local/composer`
+- [Pear][pear] is installed by default and has `auto_discover` enabled
+- [PHPUnit][unit] is installed along with all dependencies via Pear on first boot
+- [PHPDocumentor][doc] is also instaleld via Pear
 
 
   [co]: http://getcomposer.org
   [p32]: http://files.vagrantup.com/precise32.box
   [vag]: http://vagrantup.com
+  [pear]: http://pear.php.net/
+  [doc]: http://www.phpdoc.org/
+  [unit]: http://phpunit.de
