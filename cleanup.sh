@@ -17,4 +17,7 @@ Vagrant.configure("2") do |config|
 end
 EOF
 
+echo "Deleting self."
 rm cleanup.sh
+
+echo "Done."
