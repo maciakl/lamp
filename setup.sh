@@ -1,7 +1,7 @@
 #!/bin/bash
 
-S='##############################\n'
-E='\n##############################'
+S='##################################################\n'
+E='\n##################################################'
 
 # Setup unattended access for mysql-server
 echo -e "${S}Installing the LAMP stack...${E}"
@@ -51,5 +51,5 @@ Vagrant.configure("2") do |config|
 end
 EOF
 
-echo -e "${S}Done.${E}"
+echo -e "\n\nDone."
 echo "You should now be able to vagrant ssh into the box."
