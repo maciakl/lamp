@@ -33,8 +33,8 @@ echo -e "${S}Installing Composer package manager...${E}"
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/
 
-
-echo "Deleting git cruft..."
+# Delete git cruft and provisioning scripts
+echo "Cleaning up..."
 [ -d /vagrant/.git ] && sudo rm -rf /vagrant/.git
 [ -f  /vagrant/setup.sh ] && sudo rm /vagrant/setup.sh
 [ -f /vagrant/Readme.markdown ] && sudo rm /vagrant/Readme.markdown
