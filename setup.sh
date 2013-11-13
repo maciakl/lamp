@@ -1,7 +1,7 @@
 #!/bin/bash
 
-S='\e[0;34m'
-E='\e[0m'
+S='##############################\n'
+E='\n##############################'
 
 # Setup unattended access for mysql-server
 echo -e "${S}Installing the LAMP stack...${E}"
