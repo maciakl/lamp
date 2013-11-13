@@ -19,18 +19,29 @@ Set up is super easy:
     cd lamp
     vagrant up
 
-That's it. The `setup.sh` script will be ran automatically, will install all the dependencies and
+That's it. 
+
+The `setup.sh` script will be ran automatically, will install all the dependencies and
 clean up after itself. You should now have full blown lamp stack ready to go with a minimalistic
 vagrant file.
     
-Note: the provisioning script has a clean-up logic which makes it delete itself along with all
-the git repository cruft.
+If all went well you should see a folder structure like this in your directory:
+
+    .
+    ├── .gitignore
+    ├── Vagrantfile
+    └── www
+        └── index.php
+        
+Note that the provisioning script `setup.sh` will be deleted along with `.git` and the readme file to
+give you a clean working environment.
 
 Customizing
 ---
 
-You can add instructions to `setup.sh` if you want them to be executed when the box bootstraps 
-itself for the first time.
+You can add instructions to the end of `setup.sh` file. They will be executed when the box bootstraps 
+itself the first time you run `vagrant up`. Note that you have to add these modifications before you
+bring up the box for the first time.
 
 Details
 ---
