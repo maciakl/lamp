@@ -12,7 +12,7 @@ sudo apt-get -y -q install vim curl php-pear
 # install phpunit and phpdocumentor
 sudo pear channel-update pear.php.net
 sudo pear upgrade-all
-sude pear config-set auto_discover 1
+sudo pear config-set auto_discover 1
 sudo pear install pear.phpunit.de/PHPUnit
 
 sudo pear channel-discover pear.phpdoc.org
