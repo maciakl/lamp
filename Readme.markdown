@@ -19,23 +19,12 @@ Set up is super easy:
     cd lamp
     vagrant up
 
-That's it. The `setup.sh` script will be ran automatically and will install all the dependencies. 
-You should now have full blown lamp stack ready to go.
-
-If you are planning to use this for a project you probably want to clean up your working dir and
-get rid of git stuff:
-
-    rm -rf .git Readme*
+That's it. The `setup.sh` script will be ran automatically, will install all the dependencies and
+clean up after itself. You should now have full blown lamp stack ready to go with a minimalistic
+vagrant file.
     
-Now you should have a clean vagrant VM. Tip: keep `.gitignore` file. If you decide to create a new
-git repo here, it will automatically exclude the `.vagrant` folder. 
-
-Note: if you delete `setup.sh` make sure you delete the following line from `Vagrantfile` as well:
-
-    config.vm.provision "shell", path: "./setup.sh"
-    
-If you don't then vagrant will look for it next time you do `vagrant up`, realize it is missing and
-fail to boot. If the line is not there, it will be all good.
+Note: the provisioning script has a clean-up logic which makes it delete itself along with all
+the git repository cruft.
 
 Customizing
 ---
