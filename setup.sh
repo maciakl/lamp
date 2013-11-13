@@ -42,6 +42,8 @@ echo "Cleaning up..."
 
 echo "Creating new Vagrantfile..."
 sudo cat << 'EOF' > /vagrant/Vagrantfile
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 Vagrant.configure("2") do |config|
   config.vm.box = "lamp"
   config.vm.network :forwarded_port, guest: 80, host: 8080
