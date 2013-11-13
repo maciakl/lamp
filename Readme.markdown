@@ -35,9 +35,9 @@ Here are some things you might need to know:
 - The root password for mysql is `toor`
 - PHP PDO module is installed via the `php-mysql` package
 - Apache `mod_rewrite` is enabled by default
-- [Composer][co] is installed in `/usr/bin/local/compiser`
+- [Composer][co] is installed in `/usr/bin/local/composer`
 
 
-  [co]: http://getcomposer.com
+  [co]: http://getcomposer.org
   [p32]: http://files.vagrantup.com/precise32.box
   [vag]: http://vagrantup.com
