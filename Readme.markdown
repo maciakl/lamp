@@ -19,12 +19,22 @@ Set up is super easy:
     cd lamp
     vagrant up
 
-That's it. The `setup.sh` script will be ran automatically and will install all the dependencies. You should now have full blown lamp stack ready to go.
+That's it. The `setup.sh` script will be ran automatically and will install all the dependencies. 
+You should now have full blown lamp stack ready to go.
+
+If you are planning to use this for a project you probably want to clean up your working dir and
+get rid of git stuff:
+
+    rm -rf .git Readme* setup.sh
+    
+Now you should have a clean vagrant VM. Tip: keep `.gitignore` file. If you decide to create a new
+git repo here, it will automatically exclude the `.vagrant` folder.
 
 Customizing
 ---
 
-You can add instructions to `setup.sh` if you want them to be executed when the box bootstraps itself for the first time.
+You can add instructions to `setup.sh` if you want them to be executed when the box bootstraps 
+itself for the first time.
 
 Details
 ---
