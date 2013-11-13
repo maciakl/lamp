@@ -31,7 +31,23 @@ sudo service apache2 restart
 # install Composer
 echo -e "${S}Installing Composer package manager...${E}"
 curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/
+
+
+echo "Deleting git cruft..."
+[ -d /vagrant/.git ] && sudo rm -rf /vagrant/.git
+[ -f  /vagrant/setup.sh ] && sudo rm /vagrant/setup.sh
+[ -f /vagrant/Readme.markdown ] && sudo rm /vagrant/Readme.markdown
+[ -f /vagrant/Vagrantfile ] && sudo rm /vagrant/Vagrantfile
+
+echo "Creating new Vagrantfile..."
+sudo cat << 'EOF' > /vagrant/Vagrantfile
+Vagrant.configure("2") do |config|
+  config.vm.box = "lamp"
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.synced_folder "./www", "/var/www"
+end
+EOF
 
 echo -e "${S}Done.${E}"
 echo "You should now be able to vagrant ssh into the box."
