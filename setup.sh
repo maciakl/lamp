@@ -12,7 +12,7 @@ sudo apt-get -y update && sudo apt-get -y -q install apache2 php5 php5-mysql mys
 
 # install nonessential stuff
 echo -e "${S}Installing the non-essential packages...${E}"
-sudo apt-get -y -q install vim curl php-pear
+sudo apt-get -y -q install vim curl php-pear php5-xsl
 
 # install phpunit and phpdocumentor
 echo -e "${S}Installing PHPUnit and PHPDocumentor...${E}"
