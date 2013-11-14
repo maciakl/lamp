@@ -35,7 +35,7 @@ sudo mv composer.phar /usr/local/bin/
 
 # Delete git cruft and provisioning scripts
 echo "Cleaning up..."
-[ -d /vagrant/.git ] && sudo rm -rf /vagrant/.git
+[ -d /vagrant/.git ] && { chmod -R +w /vagrant/.git; sudo rm -rf /vagrant/.git; }
 [ -f  /vagrant/setup.sh ] && sudo rm /vagrant/setup.sh
 [ -f /vagrant/Readme.markdown ] && sudo rm /vagrant/Readme.markdown
 [ -f /vagrant/Vagrantfile ] && sudo rm /vagrant/Vagrantfile
